@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.github.getpushed'
+version = '1.0'
+
+sourceCompatibility = 11 // java 8
+targetCompatibility = 11
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'com.google.guava:guava:18.0'
+}
