@@ -1,8 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-group = 'com.github.getpushed'
-version = '1.2'
+group = 'britsa.persh.shop'
+version = '2.0'
 
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
@@ -12,5 +12,8 @@ repositories {
 }
 
 dependencies {
+  // JSON handling annotations
+  implementation 'com.fasterxml.jackson.core:jackson-annotations:2.4.1'
+
   compile 'com.google.guava:guava:18.0'
 }
