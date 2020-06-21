@@ -25,7 +25,6 @@ import java.util.Map;
 public class SmartUtil {
 
     public static boolean validateId(String userIdentity) throws ApplicationException {
-
         String reg = "[a-zA-Z]{4}";
         String tester = "tester";
         if (userIdentity.matches(reg))
