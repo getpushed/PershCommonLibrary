@@ -4,6 +4,8 @@ import springfox.documentation.service.Contact;
 
 public class SwaggerApiInfo {
 
+    private SwaggerApiInfo() {}
+
     public static String getPackageName() {
         return "persh.britsa";
     }
