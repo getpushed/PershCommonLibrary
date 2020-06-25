@@ -19,6 +19,7 @@ import common.exceptions.AppResponse;
 import common.exceptions.ApplicationException;
 import common.exceptions.HTTPResponse;
 
+import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,7 +28,7 @@ public class SmartUtil {
     private SmartUtil() {}
 
     public static boolean validateId(String userIdentity) throws ApplicationException {
-        String reg = "[a-z]{4}";
+        String reg = "[a-zA-Z]{4}";
         String tester = "tester";
         if (userIdentity.matches(reg))
             return true;
@@ -47,6 +48,25 @@ public class SmartUtil {
         headers.put(APPLICATION_ID, "valid1token2here");
         headers.put(AUTHORIZATION_ID, "tester");
         return headers;
+    }
+
+    public static String phoneNumberToCustomerId(final Class<?> context, final String phoneNumber) {
+        final String CUSTOMER_ID_PREFIX = "0x{0}";
+        final String OUTPUT_LOG = "Phone Number {0} = Customer ID {1}";
+
+        int recurrenceValue = 0x811c9dc5;
+        final int length = phoneNumber.length();
+
+        for (int iteration = 0; iteration < length; iteration++) {
+            recurrenceValue ^= phoneNumber.charAt(iteration);
+            recurrenceValue *= 0x01000193;
+        }
+
+        String hexString = Integer.toHexString(recurrenceValue);
+        String customerId = MessageFormat.format(CUSTOMER_ID_PREFIX, hexString);
+
+        SmartLogger.info(context, MessageFormat.format(OUTPUT_LOG, phoneNumber, customerId));
+        return customerId;
     }
 
 }
