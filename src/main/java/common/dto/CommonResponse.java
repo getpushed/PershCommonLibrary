@@ -23,7 +23,14 @@ public class CommonResponse {
     @JsonProperty("response_status")
     protected ResponseStatus responseStatus;
 
-    protected void setSuccessResponseStatus() {
+    public CommonResponse send(HTTPResponse httpResponse) {
+        this.responseStatus = new ResponseStatus();
+        this.responseStatus.setCode(httpResponse.getHttpErrorCode());
+        this.responseStatus.setMessage(httpResponse.getHttpErrorMessage());
+        return this;
+    }
+
+    protected void success() {
         this.responseStatus = new ResponseStatus();
         this.responseStatus.setCode(HTTPResponse.SUCCESS.getHttpErrorCode());
         this.responseStatus.setMessage(HTTPResponse.SUCCESS.getHttpErrorMessage());

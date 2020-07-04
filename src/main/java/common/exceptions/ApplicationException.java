@@ -22,6 +22,10 @@ public class ApplicationException extends Exception {
 
     private ResponseStatus responseStatus;
 
+    public ApplicationException(Class<?> classType, String message) {
+        super(message);
+    }
+
     public ApplicationException(Class<?> classType, AppResponse appResponse, HTTPResponse httpResponse) {
         this.responseStatus = new ResponseStatus();
 

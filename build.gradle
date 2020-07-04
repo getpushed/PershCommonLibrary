@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 group = 'britsa.persh.shop'
-version = '2.0'
+version = '2.4'
 
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
