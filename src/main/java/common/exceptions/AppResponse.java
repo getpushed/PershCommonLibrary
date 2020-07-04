@@ -19,13 +19,15 @@ public enum AppResponse {
     INVALID_UID(7000, "Invalid user identity"),
     MESSAGE_ERROR(7001, "Messaging exception while sending an email"),
     DOCUMENT_ERROR(7002, "Document exception while writing the data into pdf"),
-    ADDRESS_EXCEPTION(7003, "Address exception occurred")
+    ADDRESS_EXCEPTION(7003, "Address exception occurred"),
+    FB_NOT_FOUND_FILE(7004, "Firebase credential file not found."),
+    FB_IO_ERROR(7005, "Firebase I/O exception occured."),
     ;
 
     private int appErrorCode;
     private String appErrorMessage;
 
-    private AppResponse(int code, String message) {
+    AppResponse(int code, String message) {
         this.appErrorCode = code;
         this.appErrorMessage = message;
     }

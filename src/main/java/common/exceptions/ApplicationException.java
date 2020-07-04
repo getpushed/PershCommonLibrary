@@ -31,6 +31,17 @@ public class ApplicationException extends Exception {
         SmartLogger.error(classType, appResponse);
     }
 
+    /* should be removed after placing all local AppResponses */
+
+    public ApplicationException(Class<?> classType, int appResponseCode, String appResponseDesc, int httpResponseCode, String httpResponseDesc) {
+        this.responseStatus = new ResponseStatus();
+
+        this.responseStatus.setCode(httpResponseCode);
+        this.responseStatus.setMessage(httpResponseDesc);
+    }
+
+    /* End of removal code */
+
     public ResponseStatus getResponseStatus() {
         return this.responseStatus;
     }
