@@ -7,8 +7,8 @@ public class PershFirebaseInfo {
     private PershFirebaseInfo() {
     }
 
-    public static String getRealTimeDBProdURL() throws ApplicationException {
-        throw new ApplicationException(PershFirebaseInfo.class, "PROD URL currently unavailable!");
+    public static String getRealTimeDBProdURL() {
+        return "https://smartproduct-prod.firebaseio.com/";
     }
 
     public static String getRealTimeDBTestURL() {
