@@ -37,6 +37,10 @@ public class SmartLogger {
         getLoggerObject(classType).warning(message);
     }
 
+    public static void error(Class<?> classType, String message) {
+        getLoggerObject(classType).severe(message);
+    }
+
     public static void error(Class<?> classType, AppResponse appResponse) {
         final String messageFormat = "{0} - {1}";
         getLoggerObject(classType).severe(MessageFormat.format(messageFormat, appResponse.getAppErrorCode(), appResponse.getAppErrorMessage()));

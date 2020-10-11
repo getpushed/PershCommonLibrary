@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 group = 'britsa.persh.shop'
-version = '2.5'
+version = '2.6'
 
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
@@ -14,6 +14,7 @@ repositories {
 dependencies {
   // JSON handling annotations
   implementation 'com.fasterxml.jackson.core:jackson-annotations:2.4.1'
+  implementation 'com.fasterxml.jackson.core:jackson-core:2.11.3'
 
   // Swagger dependencies
   implementation 'io.springfox:springfox-swagger2:2.9.2'

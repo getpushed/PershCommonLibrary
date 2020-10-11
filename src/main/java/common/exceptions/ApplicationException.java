@@ -37,11 +37,11 @@ public class ApplicationException extends Exception {
 
     /* should be removed after placing all local AppResponses */
 
-    public ApplicationException(Class<?> classType, int appResponseCode, String appResponseDesc, int httpResponseCode, String httpResponseDesc) {
+    public ApplicationException(Class<?> classType, HTTPResponse httpResponse) {
         this.responseStatus = new ResponseStatus();
 
-        this.responseStatus.setCode(httpResponseCode);
-        this.responseStatus.setMessage(httpResponseDesc);
+        this.responseStatus.setCode(httpResponse.getHttpErrorCode());
+        this.responseStatus.setMessage(httpResponse.getHttpErrorMessage());
     }
 
     /* End of removal code */

@@ -22,6 +22,7 @@ public enum AppResponse {
     ADDRESS_EXCEPTION(7003, "Address exception occurred"),
     FB_NOT_FOUND_FILE(7004, "Firebase credential file not found."),
     FB_IO_ERROR(7005, "Firebase I/O exception occured."),
+    DOCUMENT_NOT_FOUND(7006, "Requested document not found on Firestore DB")
     ;
 
     private int appErrorCode;
